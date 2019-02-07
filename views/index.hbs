@@ -1,0 +1,108 @@
+ <section class="container">
+    <h2 class="page-header text-center"><a href="/" style="text-decoration: none;">TRACKING DATA</a> </h2>
+
+   
+    <div class="row">
+        {{!-- Inserting data --}}
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="well well-sm">
+            <h3 class="text-primary text-center">INSERT DATA</h3><hr>
+                <form action="/insert" method="post">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" class="form-control input-sm">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="content">Content</label>
+                        <input type="text" name="content" id="content" class="form-control input-sm">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" name="author" id="author" class="form-control input-sm">
+                    </div>
+                
+                    <button type="submit" class="btn btn-sm btn-block btn-primary">INSERT</button>
+                </form>
+            </div>
+            </div>
+
+            {{!-- display Data --}}
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="well well-sm">
+                    <h3 class="text-warning text-center">GET DATA</h3>
+                    <hr>
+                    <a href="/get-data" class="btn btn-warning btn-sm">LOAD DATA</a>
+                    <div>
+                        {{# each items  }}
+                            <article class="well well-sm" style="margin-top: 7px;">
+                                <div>Title: {{this.title}}</div>
+                                <div>Content: {{this.content}}</div>
+                                <div>Author: {{this.author}}</div>
+                                <div>ID: {{this._id}}</div>
+                            </article>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+
+                {{!-- Update Data --}}
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="well well-sm">
+                                    <h3 class="text-info text-center">UPDATE DATA</h3>
+                                    <hr>
+                                    <form action="/update" method="post">
+                                        <div class="form-group">
+                                            <label for="id">ID</label>
+                                            <input type="text" name="id" id="id" class="form-control input-sm">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="title">Title</label>
+                                            <input type="text" name="title" id="title" class="form-control input-sm">
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="content">Content</label>
+                                            <input type="text" name="content" id="content" class="form-control input-sm">
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="author">Author</label>
+                                            <input type="text" name="author" id="author" class="form-control input-sm">
+                                        </div>
+                                
+                                        <button type="submit" class="btn btn-sm btn-block btn-info">UPDATE</button>
+                                    </form>
+                                </div>
+                 </div>
+
+
+                    {{!-- Delete Data --}}
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="well well-sm">
+                            <h3 class="text-success text-center">DELETE DATA</h3>
+                            <hr>
+                            <form action="/delete" method="post">
+                                <div class="form-group">
+                                    <label for="id">ID</label>
+                                    <input type="text" name="id" id="id" class="form-control input-sm">
+                                </div>
+                        
+                                <button type="submit" class="btn btn-sm btn-block btn-success">DELETE</button>
+                            </form>
+                        </div>
+                    </div>
+        
+    </div>
+    
+
+
+ </section>
+
+
+
+
+
+
